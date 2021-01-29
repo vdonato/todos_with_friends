@@ -59,9 +59,6 @@ def finished_tasks(col):
     )
 
 
-render_funcs = [todos, finished_tasks]
-
-
 st.write("# TODOs and Stuff")
 
 if session_state.model:
@@ -78,7 +75,7 @@ with st.beta_form(submit_label="Submit", key="submit_form"):
     todo_text = input_placeholder.text_input(
         "Add a TODO!", key=session_state.input_key
     ).strip()
-    share_me = st.checkbox("Share with the World?")
+    share_me = st.checkbox("Contribute to the Hivemind?", value=True)
 
     if todo_text:
         session_state.input_key += 1
@@ -86,7 +83,9 @@ with st.beta_form(submit_label="Submit", key="submit_form"):
         update_model(todo_text)
         input_placeholder.text_input("Add a TODO!", key=session_state.input_key)
 
-columns = st.beta_columns(2)
+    if share_me:
+        pass
 
-for fn, col in zip(render_funcs, columns):
-    fn(col)
+col1, col2 = st.beta_columns(2)
+todos(col1)
+finished_tasks(col2)
