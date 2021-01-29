@@ -1,5 +1,7 @@
+import string
 from functools import partial
 
+import markovify
 import streamlit as st
 
 st.set_page_config(layout="wide")
@@ -9,7 +11,17 @@ session_state = st.beta_session_state(
     input_key=0,
     my_todos=[],
     my_finished_tasks=[],
+    model=None,
 )
+
+
+def update_model(todo_text):
+    model = session_state.model
+    new_model = markovify.Text(todo_text, state_size=1)
+    if not model:
+        session_state.model = new_model
+    else:
+        session_state.model = markovify.combine([model, new_model])
 
 
 def render_tasks_and_buttons(tasks, button_label, button_action):
@@ -52,7 +64,14 @@ render_funcs = [todos, finished_tasks]
 
 st.write("# TODOs and Stuff")
 
-# TODO: markov-generated todo suggestions (lol)
+if session_state.model:
+    suggestion = session_state.model.make_sentence()
+    if suggestion:
+        if suggestion[-1] in string.punctuation:
+            suggestion = suggestion[:-1]
+
+        st.write(f"Don't know what to do? Why not...")
+        st.write(f"{suggestion}?")
 
 with st.beta_form(submit_label="Submit", key="submit_form"):
     input_placeholder = st.empty()
@@ -64,6 +83,7 @@ with st.beta_form(submit_label="Submit", key="submit_form"):
     if todo_text:
         session_state.input_key += 1
         session_state.my_todos.append(todo_text)
+        update_model(todo_text)
         input_placeholder.text_input("Add a TODO!", key=session_state.input_key)
 
 columns = st.beta_columns(2)
