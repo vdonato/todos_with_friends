@@ -1,2 +1,3 @@
 markovify
+firebase-admin
 # streamlit <-- this needs to be set to be the beta hackathon version somehow
