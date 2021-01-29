@@ -52,7 +52,7 @@ def update_model(todo_text=None):
         )
         session_state.model = TextModel.from_json(serialized_model)
     if todo_text:
-        to_combine = TextModel(todo_text, state_size)
+        to_combine = TextModel(todo_text)
         session_state.model = markovify.combine([session_state.model, to_combine])
 
 
@@ -62,6 +62,11 @@ def render_tasks_and_buttons(column, tasks, button_label, button_action):
         column.button(
             button_label, key=f"{button_label}{i}", on_click=partial(button_action, i)
         )
+
+
+def make_suggestion():
+    suggestion = session_state.model.make_sentence(tries=100)
+    session_state.my_todos.append(suggestion)
 
 
 def move_to_finished(i):
@@ -96,21 +101,12 @@ def finished_tasks(col):
 update_model()
 st.write("# TODOs and Stuff")
 
-if session_state.model:
-    suggestion = session_state.model.make_sentence(tries=100)
-    if suggestion:
-        if suggestion[-1] in string.punctuation:
-            suggestion = suggestion[:-1]
-
-        st.write(f"Don't know what to do? Why not work on...")
-        st.write(f"`{suggestion}`?")
-
 with st.beta_form(submit_label="Submit", key="submit_form"):
     input_placeholder = st.empty()
     todo_text = input_placeholder.text_input(
         "Add a TODO!", key=session_state.input_key
     ).strip()
-    share_me = st.checkbox("Contribute to the Hivemind?", value=True)
+    share_me = st.checkbox("Help improve our TODO suggestions?", value=True)
 
     if todo_text:
         session_state.input_key += 1
@@ -121,6 +117,9 @@ with st.beta_form(submit_label="Submit", key="submit_form"):
         if share_me:
             doc_ref = todos_collection.document()
             doc_ref.set({"text": todo_text})
+
+st.text("")
+st.button("Help! I don't know what to do! :(", on_click=make_suggestion)
 
 
 col1, col2 = st.beta_columns(2)
