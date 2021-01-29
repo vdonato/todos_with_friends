@@ -9,6 +9,7 @@ from firebase_admin import credentials, firestore
 import streamlit as st
 
 import secrets_beta
+from text_model import TextModel
 
 st.set_page_config(layout="wide")
 
@@ -49,9 +50,9 @@ def update_model(todo_text=None):
         serialized_model = (
             db.collection("models").document("model").get().to_dict()["json_string"]
         )
-        session_state.model = markovify.Text.from_json(serialized_model)
+        session_state.model = TextModel.from_json(serialized_model)
     if todo_text:
-        to_combine = markovify.Text(todo_text, state_size=2)
+        to_combine = TextModel(todo_text, state_size)
         session_state.model = markovify.combine([session_state.model, to_combine])
 
 
