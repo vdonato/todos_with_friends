@@ -4,6 +4,8 @@ from functools import partial
 import markovify
 import streamlit as st
 
+import secrets_beta
+
 st.set_page_config(layout="wide")
 
 session_state = st.beta_session_state(
@@ -24,10 +26,10 @@ def update_model(todo_text):
         session_state.model = markovify.combine([model, new_model])
 
 
-def render_tasks_and_buttons(tasks, button_label, button_action):
+def render_tasks_and_buttons(column, tasks, button_label, button_action):
     for i, t in enumerate(tasks):
-        col.markdown(f"* {t}")
-        col.button(
+        column.markdown(f"* {t}")
+        column.button(
             button_label, key=f"{button_label}{i}", on_click=partial(button_action, i)
         )
 
@@ -44,6 +46,7 @@ def remove_finished_task(i):
 def todos(col):
     col.write("### My TODOs")
     render_tasks_and_buttons(
+        column=col,
         tasks=session_state.my_todos,
         button_label="Mark Done",
         button_action=move_to_finished,
@@ -53,6 +56,7 @@ def todos(col):
 def finished_tasks(col):
     col.write("### My Finished Tasks")
     render_tasks_and_buttons(
+        column=col,
         tasks=session_state.my_finished_tasks,
         button_label="Remove",
         button_action=remove_finished_task,
