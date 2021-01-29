@@ -50,7 +50,7 @@ def update_model(todo_text):
         # session_state.model = new_model
         return
 
-    to_combine = markovify.Text(todo_text, state_size=1)
+    to_combine = markovify.Text(todo_text, state_size=2)
     session_state.model = markovify.combine([session_state.model, to_combine])
 
 
@@ -99,8 +99,8 @@ if session_state.model:
         if suggestion[-1] in string.punctuation:
             suggestion = suggestion[:-1]
 
-        st.write(f"Don't know what to do? Why not...")
-        st.write(f"{suggestion}?")
+        st.write(f"Don't know what to do? Why not work on...")
+        st.write(f"`{suggestion}`?")
 
 with st.beta_form(submit_label="Submit", key="submit_form"):
     input_placeholder = st.empty()
