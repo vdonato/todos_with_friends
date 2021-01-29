@@ -44,14 +44,15 @@ session_state = st.beta_session_state(
 )
 
 
-def update_model(todo_text):
+def update_model(todo_text=None):
     if not session_state.model:
-        # TODO(vincent): Fetch model from Firestore
-        # session_state.model = new_model
-        return
-
-    to_combine = markovify.Text(todo_text, state_size=2)
-    session_state.model = markovify.combine([session_state.model, to_combine])
+        serialized_model = (
+            db.collection("models").document("model").get().to_dict()["json_string"]
+        )
+        session_state.model = markovify.Text.from_json(serialized_model)
+    if todo_text:
+        to_combine = markovify.Text(todo_text, state_size=2)
+        session_state.model = markovify.combine([session_state.model, to_combine])
 
 
 def render_tasks_and_buttons(column, tasks, button_label, button_action):
@@ -91,10 +92,11 @@ def finished_tasks(col):
     )
 
 
+update_model()
 st.write("# TODOs and Stuff")
 
 if session_state.model:
-    suggestion = session_state.model.make_sentence()
+    suggestion = session_state.model.make_sentence(tries=100)
     if suggestion:
         if suggestion[-1] in string.punctuation:
             suggestion = suggestion[:-1]
