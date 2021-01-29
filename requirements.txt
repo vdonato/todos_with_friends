@@ -2,3 +2,4 @@ markovify
 firebase-admin
 spacy==2.3.5
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz
+streamlit-0.75.0-py2.py3-none-any.whl
