@@ -1,12 +1,39 @@
+import json
+import os
 import string
 from functools import partial
 
+import firebase_admin
 import markovify
+from firebase_admin import credentials, firestore
 import streamlit as st
 
 import secrets_beta
 
 st.set_page_config(layout="wide")
+
+TMP_CREDS_PATH = "/tmp/todo_creds.json"
+
+
+@st.cache
+def firestore_setup():
+    creds_dict = json.loads(st.secrets["firestore_key"])
+
+    with open(TMP_CREDS_PATH, "w") as f:
+        json.dump(creds_dict, f)
+        f.write("\n")
+
+    creds = credentials.Certificate(TMP_CREDS_PATH)
+    firebase_admin.initialize_app(creds)
+
+    os.remove(TMP_CREDS_PATH)
+
+    return st.secrets["firestore_key"]
+
+
+firestore_setup()
+db = firestore.client()
+todos_collection = db.collection("todos")
 
 session_state = st.beta_session_state(
     default_key="some_key",
@@ -18,12 +45,13 @@ session_state = st.beta_session_state(
 
 
 def update_model(todo_text):
-    model = session_state.model
-    new_model = markovify.Text(todo_text, state_size=1)
-    if not model:
-        session_state.model = new_model
-    else:
-        session_state.model = markovify.combine([model, new_model])
+    if not session_state.model:
+        # TODO(vincent): Fetch model from Firestore
+        # session_state.model = new_model
+        return
+
+    to_combine = markovify.Text(todo_text, state_size=1)
+    session_state.model = markovify.combine([session_state.model, to_combine])
 
 
 def render_tasks_and_buttons(column, tasks, button_label, button_action):
@@ -87,8 +115,10 @@ with st.beta_form(submit_label="Submit", key="submit_form"):
         update_model(todo_text)
         input_placeholder.text_input("Add a TODO!", key=session_state.input_key)
 
-    if share_me:
-        pass
+        if share_me:
+            doc_ref = todos_collection.document()
+            doc_ref.set({"text": todo_text})
+
 
 col1, col2 = st.beta_columns(2)
 todos(col1)
