@@ -19,15 +19,15 @@ TMP_CREDS_PATH = "/tmp/todo_creds.json"
 @st.cache
 def firestore_setup():
     creds_dict = json.loads(st.secrets["firestore_key"])
+    try:
+        with open(TMP_CREDS_PATH, "w") as f:
+            json.dump(creds_dict, f)
+            f.write("\n")
 
-    with open(TMP_CREDS_PATH, "w") as f:
-        json.dump(creds_dict, f)
-        f.write("\n")
-
-    creds = credentials.Certificate(TMP_CREDS_PATH)
-    firebase_admin.initialize_app(creds)
-
-    os.remove(TMP_CREDS_PATH)
+        creds = credentials.Certificate(TMP_CREDS_PATH)
+        firebase_admin.initialize_app(creds)
+    finally:
+        os.remove(TMP_CREDS_PATH)
 
     return st.secrets["firestore_key"]
 
