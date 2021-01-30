@@ -21,7 +21,7 @@ while True:
             continue
 
         with open("titles.txt", "a") as f:
-            t = issue["title"]
+            t = issue["title"].strip()
             if t[-1] not in string.punctuation:
                 t += "."
             f.write(t)

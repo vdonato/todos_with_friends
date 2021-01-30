@@ -2,14 +2,14 @@ Render HTML component from a beta column.
 Fix e2e/Dockerfile to properly replicate the CI env for cypress tests.
 `make all-devel` fails at `init: ... protobuf`
 st.beta_columns doesn't document use_column_width parameter.
-Improve printed CLI messages .
-Make PyArrow a dependency and remove warning about PyArrow + Python 3.9 .
+Improve printed CLI messages.
+Make PyArrow a dependency and remove warning about PyArrow + Python 3.9.
 Streamlit should show name of current file in disconnect dialog.
 Expander buttons overrun into column content.
 Hello everyone! I have been reading about that feature called "experimental_rerun".
 🐞: Table content barred by scroll-bar.
 Docs crashing on various browsers.
-[Theming] Pass theme to custom components .
+[Theming] Pass theme to custom components.
 [Theming] Apply theme to highly used charts.
 [Theming] Set page based on theme.
 [Theming] Create theme selector.
@@ -28,10 +28,10 @@ Plotting from missing library results in: AttributeError: 'AxesSubplot' object h
 UnicodeDecodeError with .las Files and file_uploader.
 Make st_multiselect E2E test not flakey.
 UnicodeDecodeError when serving static binary files from custom components.
-Identify E2E tests that can be converted to unit tests. .
+Identify E2E tests that can be converted to unit tests.
 Button doesn't work when label changes.
-Multiselect box can seem to "randomly" resets if the same data is fetched in different order .
-Deck object with PointCloudLayer cannot be integrated properly with pydeck_chart .
+Multiselect box can seem to "randomly" resets if the same data is fetched in different order.
+Deck object with PointCloudLayer cannot be integrated properly with pydeck_chart.
 Safety check for CircleCI for E2E snapshots.
 Review/fix st.pyplot E2E test.
 Number Input **does** require the label.
@@ -44,7 +44,7 @@ Regression: Select menu does not autoselect first item.
 Add test case for hotkeys.
 Add test case to handle markup regression.
 st.cache() error.
-Poor Map Performance/Usability for 100k+ data points .
+Poor Map Performance/Usability for 100k+ data points.
 st.markdown cannot create markdown tables.
 File Uploader E2E test is being flaky.
 Ctrl /cmd + c triggers clear cache.
@@ -75,7 +75,7 @@ Possible memory leak: passing int(None) to st.slider step value will crash strea
 eye button from text_input using password not working on Firefox.
 st.number_input doesn't accept reasonable int arguments.
 my streamlit web page showing please wait not loading what to do?
-Graphviz chart display broken with Containers .
+Graphviz chart display broken with Containers.
 st.video() should take in a youtube link.
 Create a CircleCI job to test streamlit without any dependencies.
 Add conda build instructions for Streamlit sharing.
@@ -133,7 +133,7 @@ Getting WebSockedClosedError() after 20 min, on a long-running Streamlit Script.
 Add simple cache with no fancy features that's not buggy.
 In-memory caching of of instances of user-defined classes does not preserve class identity.
 Closing and reopening an expander resets a nested number_input.
-Clipping components to other components .
+Clipping components to other components.
 Plotting demo failed with exception ('RangeIndex' object has no attribute 'step')
 Update imports of S3Storage now that boto3 is a dev dependency.
 Streamlit Hash Funcs and MultiProcessing don't work together.
@@ -164,7 +164,7 @@ Using git below version 2.7 requires remote (e.g. GitHub) credentials on every r
 Sorting dataframe does not toggle between asc and desc.
 Add in images or S4A apps or Static Embedded Apps in tutorials.
 st.audio Static Embedded App does not work on Safari.
-Enable horizonal scrolling .
+Enable horizonal scrolling.
 Connection timed out - on high latency networks.
 File_uploader() - ValueError: I/O operation on closed file.
 Exception when trying to predict.
@@ -175,19 +175,19 @@ pydeck_chart not showing different pydeck Views types.
 Crashes in simple PyTorch image classifier.
 Terminal is hung during API processing.
 Gensim Coherence model not working.
-Streamlit not working on AWS ECS Docker Deployment .
+Streamlit not working on AWS ECS Docker Deployment.
 st.expander doesn't fade when app is rerunning.
 Hover effect in st.selectbox is slow when there are thousands of items (even if DOM only has 10!)
 Add the choice if there is no choice in st.multiselect.
 Use async Tornado + uvloop.
-Investigate File Uploader + Execbox: uploaded files do not persist in the widget .
+Investigate File Uploader + Execbox: uploaded files do not persist in the widget.
 latin-1' codec can't encode character '\U0001f44b' in position 3: ordinal not in range(256)
-Streamlit crashes/reset; connection to server lost .
+Streamlit crashes/reset; connection to server lost.
 object string shows when using the new beta_columns for styling.
 Update Core Preview App with dropdown of E2E tests.
 Cannot hash SwigPyObject (or any binded objects)
 Color picker should only rerun script once pop-up is closed.
-file_uploader broken after upgrading streamlit .
+file_uploader broken after upgrading streamlit.
 when I run the code it gives an error, there is not anything wrong in the code.
 Make Altair selections available in Python.
 Inject Streamlit Components Directly into html instead of iFrame.
@@ -197,7 +197,7 @@ The option --server.fileWatcherType does not work from the command line.
 x-Axis time units for Altair Charts (& st.line_chart) look weird.
 Disable streamlit widgets.
 Select All Feature in st.selectbox.
-I tried to get the columns of the dataset .
+I tried to get the columns of the dataset.
 module 'streamlit' has no attribute 'beta_container'
 number of digits for number_input.
 st.expander cuts off sliders.
@@ -208,10 +208,10 @@ Create Data Frame with PySpark in Streamlit Application Result in Pickling Error
 Improve PR Preview process.
 Automatically reset buffer when file is read.
 streamlit hello fails with protobuf==3.11.3.
-Unexpected behavior of st.write() for strings including brackets '[]' .
+Unexpected behavior of st.write() for strings including brackets '[]'
 Stuck on " HTTP request sent; waiting for response. " terminal screen after running any streamlit script.
 Script rerun event can cause `SessionInfo not initialized` error on the frontend.
-Separate Modules inside a page with its own state in-depended on others .
+Separate Modules inside a page with its own state in-depended on others.
 Button like UI appeared undesirably.
 imapclient TypeError.
 Dataset Explorer Doesn't Work for squad_es and squad_it.
@@ -229,7 +229,7 @@ Int64 column with NA Can Not Be Displayed in Streamlit.
 y-axis on interactive vega-lite charts (like st.bar_chart) cuts off on zoom.
 E2E tests. run_e2e_tests.py throws exception.
 Rerun when file system/database/some other external data source changes.
-Allow for Center of text etc. .
+Allow for Center of text etc.
 Docs sidebar has visual cruft on narrow screen widths.
 User info does not work.
 Changes in a widget in an expander closes the expander.
@@ -248,7 +248,7 @@ Upgrade BaseWeb.
 Streamlit number_input reverting to default in column layout.
 Upgrade Cypress.
 cache not working with function that pass lambda function which iterate over a list as argument.
-Run 2 cypress tests concurrently using S4A PR preview. .
+Run 2 cypress tests concurrently using S4A PR preview.
 Clicking on a text field in the sidebar (on mobile) causes the sidebar to close.
 Components keep refreshing/remounting when in a column.
 Media + Components (Ace Editor) don't work in Safari or Chrome iOS.
@@ -258,7 +258,7 @@ On the newest docs, "Deploy a Streamlit app" page is empty.
 [Expander] Add disabled(?) state.
 Plotly Map Zooming Issues.
 Request for tar file for lib in pypi.
-Greeting and Stale Bot .
+Greeting and Stale Bot.
 Add linting rule for no one line if statements.
 Using promises in Cypress.
 audio widget not working on Safari.
@@ -285,7 +285,7 @@ Plotly graphs with string labels show an empty string for the hover text.
 Look for Configuration Files in Platform-Recommended Directories.
 Incorrect statement which files streamlit is watching for changes?
 Stuck at connecting at Heroku.
-Caching reverts widgets to initial state .
+Caching reverts widgets to initial state.
 Ability to set sidebar width.
 Prevent submission of unlinted Python code.
 [Layouts] Expander: Configure the display of the header text.
@@ -309,8 +309,8 @@ Switch to GitHub Discussions for community communication.
 Styling for deprecated sections.
 multiselect randomly resets to all options.
 Bokeh Column Layout not displayed.
-Would be nice to have a resizable text_area, which adapt length to the content. .
-why im getting OSError: [Errno 5] Input/output error error while running streamlit in live server ? the code is running ok in my localhost but getting OSError: [Errno 5] Input/output error while running on server .
+Would be nice to have a resizable text_area, which adapt length to the content.
+why im getting OSError: [Errno 5] Input/output error error while running streamlit in live server ? the code is running ok in my localhost but getting OSError: [Errno 5] Input/output error while running on server.
 St File Uploader doesn't work over Kubernetes for 0.66, but does for 0.61.0.
 Make it easy to save the app state as a URL.
 Upgrade Prettier to 2.1.
@@ -318,7 +318,7 @@ Formally support Python 3.9.
 Segmentation fault on WSL and docker.
 How to open webcamera using javasrcipt in streamlit ?
 Changing variable with slider reloads page and resets all variables.
-How To save file_uploaded  .mp3 and wav files using streamlit ??? .
+How To save file_uploaded  .mp3 and wav files using streamlit ???
 st.cache fails for TF2 SavedModels (HuggingFace, Tensorflow Hub, etc.)
 Make Altair charts bi-directional.
 Wrong type for content.
@@ -329,7 +329,7 @@ RuntimeError: Data of size 82.1MB exceeds write limit of 50.0MB - CSV File Downl
 2nd Sidebar (on right side)
 Integrate Randy's publish-to-PyPI github action.
 NaT Values in datetime columns of Dataframes get filled with a datetime value by st.write.
- Why im getting this error while running video inside streamlit  when im running this locally it working while  running with streamlit it is showing below error .
+Why im getting this error while running video inside streamlit  when im running this locally it working while  running with streamlit it is showing below error.
 Why i am not able to get colored emoji when im writing ?below lines in linux ubuntu.
 Enable control over URL subdirectories in addition to query parameters.
 Update pydeck dependency to `pydeck = "*"`
@@ -406,9 +406,9 @@ Trim whitespace when a string is provided to st.image.
 Make the search bar sticky.
 restrict  a date selection of weekend days.
 Handling timezones.
-#1346 .
+#1346.
 1288.
-Detect if runtime environment is supported by Streamlit. .
+Detect if runtime environment is supported by Streamlit.
 Need a new function that can automatically say yes to all overwrite instructions.
 Add slack notification to CI failures on develop branch.
 Request: st.rerun()
@@ -446,7 +446,7 @@ Documentation - API should not list element as a parameter.
 Attribute Error on import streamlit if mysql.connector is installed in same Anaconda environment.
 Streamlit Component iframe reloads when new Python arguments are passed in.
 Breakup frontend/src/lib folder.
-Cloud Deployment Documentation .
+Cloud Deployment Documentation.
 Document for publishing react based component is incomplete.
 I cant pip install streamlit.
 Contributing page references a non-existing make target.
@@ -464,7 +464,7 @@ Regression: missing icons/fonts when deployed under a subpath (not "/")
 Investigate performance improvements for npm build script.
 Streamlit behind reverse proxy doesn’t work when you change port.
 Healthz endpoint hard-coded to 8501/doesn't pick up port specified in CLI?
-streamlit-nightly stoped at 0.62.1.dev20200621 .
+streamlit-nightly stoped at 0.62.1.dev20200621.
 [FEA] 100% main width/height components.
 [FEA]  support allow fullscreen in embedded iframes.
 Crash: import gym rendering in a streamlit monitor crashes on Mac OS X.
@@ -473,7 +473,7 @@ supporting other languages (utf-8)
 Pandas DataFrame needs enhanced visualization.
 Files not tracked if folder doesn't have __init__.py.
 Credits are swapped for `st.image`, `st.video`
-CSS: borders on left menu show up at smaller widths .
+CSS: borders on left menu show up at smaller widths.
 R.
 Add RTD to the PR optional checks.
 File Uploader never resets (not None for every session)
@@ -489,13 +489,13 @@ Cannot hash torchtext.vectors.GloVe.
 Altair support - Layer charts dont appear to work in streamlit.
 Add Ibis support for pythonic access to SQL databases.
 streamlit on WSL in windows, running script always shows the demo on browser.
-Support for unix sockets .
+Support for unix sockets.
 Add argument to st.video to accept subtitle files.
 slider.
 Improve caching of recursive calls.
 st.image should accept as input the output of `open()`
 Tensorflow's new version breaks pytests.
-Altered dataframe doesn't persist .
+Altered dataframe doesn't persist.
 KeyError: '<folder name>' at rerun.
 can't display all dataframe in firefox.
 StreamlitAPIException: Unable to convert object of type <class 'str'> to pandas.DataFrame.
@@ -504,7 +504,7 @@ Cannot Deploy Streamlit to Heroku.
 Option to change the Streamlit Logo.
 Bad message format value is null on large plotly images.
 Clean up the terminal warning about XSRF and CORS.
-Improve experience when end user has an intermittent connection. .
+Improve experience when end user has an intermittent connection.
 UnhashableTypeError: Cannot hash object of type _thread.RLock, found in the body of Scheme_Names().
 Invalid LngLat object: (Nan, Nan)
 while caching the body of the function, Streamlit encountered an object of type `builtins.function`, which it does not know how to hash.
@@ -545,7 +545,7 @@ Create a config option to toggle websocket compression in Streamlit server.
 Remove TOC from Getting Started page.
 Move 'Run Streamlit remotely' tutorial to wiki.
 Update RTD build script to be generic to env name.
-InternalHashError for datetime.strftime object .
+InternalHashError for datetime.strftime object.
 st.cache is not work in jupyter notebook.
 st.file_uploader() opens camera in android phone.
 No value for argument ‘body’ in method call pylint(no-value-for-parameter)
@@ -562,10 +562,10 @@ Screencast not working on some Windows based browsers.
 st.file_uploader returns 400 error for files above 100MB.
 Altair example of Bar Chart with rounded edges don't work in streamlit.
 Caching function that returns PyTorch tensor on GPU gives error message.
-HTML - Folium - Not able to display map properly on the app despite unsafe_allow_html=True .
+HTML - Folium - Not able to display map properly on the app despite unsafe_allow_html=True.
 Problem with opening some of datasets (nlp/viewer)
 hot reload does not work on functions which are not directly imported.
-Ability to make API calls to Streamlit apps .
+Ability to make API calls to Streamlit apps.
 Error using modin.pandas within streamlit app.
 Evaluating a cached function at multiple integer-like floats only runs once.
 Use React hooks.
@@ -583,7 +583,7 @@ Remove remaining python 2 references.
 Unable to install both opencv-python and streamlit (had to install opencv-python-headless)
 Static content doesn't working. (Css and js)
 Altair : Duplicate signal name: "selector080_Fiscal_Week"
-module xlwings import fails .
+module xlwings import fails.
 caching and TTL.
 streamlit.video() ,parameter start_time is mentioned twice.
 Spelling mistake while running streamlit hello , DataFrame Demo.
@@ -596,7 +596,7 @@ Remove st.deck_gl_chart.
 Fitting an XGBoost model results in InternalHashError: unhashable type: 'bytearray'
 st.image() blinks sporadically in 0.59.
 Streamlit exit with error!
-Windows doesn't support emojis on terminal .
+Windows doesn't support emojis on terminal.
 Make st.dataframe more awesome.
 Ghost images of widgets in sidebar.
 slider with step=2 and odd numbers returns even values.
@@ -604,9 +604,9 @@ Multiselect example in the documentation does not work if copied.
 Many (maybe most) images generated by st.pyplot() break in version 0.59.
 ImportError .so file in python (invalid ELF header)
 grid layout for the main panel.
-None object returning in file uploader widget .
+None object returning in file uploader widget.
 Streamlit deletes sys.modules on reload.
-Blank page in IE 11 running any streamlit script .
+Blank page in IE 11 running any streamlit script.
 Heatmap.
 Need hash_funcs for Torchvision model.
 _init_ docstring throws Sphinx build warnings.
@@ -641,21 +641,21 @@ Planning.
 SchemaValidationError:
 Bug in 0.57.3.
 Streamlit should have support for Internationalization (i18n)
-Order of dicts affects the hash but shouldn't .
+Order of dicts affects the hash but shouldn't.
 High DPI pyplot() image is not preserved in UI.
 HiPlot integration.
 Dockerfile and wiki for E2E tests are out of date.
 Embedding PowerBI/Google Data Studio reports in Streamlit.
 datetime column is incorrectly displayed in streamlit.
 Editable Pandas DataFrame Widget.
-Editable .
+Editable.
 Provide access to tornado's request_callback.
 Bug while caching hydra.cc object (omegaconf.dictconfig.DictConfig)
 InternalHashError: Type aliases cannot be used with isinstance() - when using st.cache.
 External data for a nested function causes cache error.
 [question] How to create a pop-up/ modal window?
 Cache Keras trained model.
-st.text_area configurability:  change size, etc .
+st.text_area configurability:  change size, etc.
 Tooltip in altair multi layer doesn't work.
 st.graphviz_chart examples not rendering.
 tree visulization in decision tree(it is helpful for user)
@@ -679,7 +679,7 @@ Windows encoding issues.
 Streamlit hello test failure not recorded.
 Context: streamlit.graphviz_chart Typo: should be graphviz.Digraph NOT graphviz.DiGraph.
 Improve our format parameter as python format.
-scale/stretch bokeh plots to full screen while using aspect ratio .
+scale/stretch bokeh plots to full screen while using aspect ratio.
 Set gatherUsageStats via streamlit run paramter.
 file_uploader does not work on first load.
 Setting non-Parameter class attribute opts.Segments.
@@ -707,7 +707,7 @@ Need hash_func for type _asyncio.Task.
 Streamlit fails to run after pip installation on Windows 10 Anaconda.
 Improve st.cache error handling for Unhashable Types.
 Hybrid select box / text_input widget (use text input to create new options)
-Allow text to copied out of select boxes .
+Allow text to copied out of select boxes.
 Importing streamlit adds StreamHandler to root logger.
 Cypress warning and error output.
 ImportError: cannot import name 'SQLALchemy' from 'flask_sqlalchemy'
@@ -771,7 +771,7 @@ Altair charts causes memory leak on browser side.
 protoc-gen-mypy: program not found or is not executable.
 Place a message in a named box.
 jsroot graphs wrapper for streamlit.
-Allow configurable user-set CSS .
+Allow configurable user-set CSS.
 Allow Latex and Markdown formatting in widget options.
 Streamlit does not work correctly behind a reverse proxy if a trailing slash is omitted.
 Configuration menu option in documentation table of contents.
@@ -784,7 +784,7 @@ Interactive text dialogue Box.
 Hot load doesn't work in a package setting.
 Add possibility to rotate tick labels.
 Add possibility to add title to line chart.
-Remove Python2 compatibility code .
+Remove Python2 compatibility code.
 Dataframe styling not applied consistently for floats.
 Add tooltips for TextInput widget.
 Change  set default PINK color.
@@ -793,7 +793,7 @@ Support for `_repr_html_` property on objects.
 Used to work on my previous setup reran now and it broke at the cache line.
 Replacing Pandas column value in cached function.
 Why Does streamlit flip and change my graph?
-Display local PDF in Streamlit as text .
+Display local PDF in Streamlit as text.
 Show sidebar collapsed as default.
 Session states.
 Bad sortColumnIdx error after a dataframe is changed.
@@ -811,7 +811,7 @@ Showing input conditionally resets inputs defined afterwards.
 Get index from selectbox.
 running streamlit from Microsoft Azurenotebooks fails.
 running streamlit from a jupyter notebook error.
-Button widget Loses its state upon re-rendering .
+Button widget Loses its state upon re-rendering.
 file_uploader doesn't support multi files.
 How do I not show the streamlit app?
 Streamlit can't mix numpy int64 and int.
@@ -826,9 +826,9 @@ st.dataframe does not handle StringDtype in Pandas >= 1.0.0.
 [Docs] Update the st.progress doc example.
 Alpha Numeric Slider.
 Height is not being updated for charts.
-height parameter is not working for pydeck_chart() .
+height parameter is not working for pydeck_chart()
 Multiselect widget loses selected values.
-Problem in sidebar: checkbox lose their status .
+Problem in sidebar: checkbox lose their status.
 Show warning when calling to_bytes with object-typed NumPy array.
 "All arguments must be of the same type" exception checks the type of argument step, but doesn't report on its type.
 Allow hiding tracebacks.
@@ -853,7 +853,7 @@ st.write: allow setting bounding box for output (or new scroll box widget)
 Error when calling 'streamlit hello'
 How to add st modules dynamically.
 Feature request: st.hvplot_chart for hvplot plots.
-Improve function cache error message .
+Improve function cache error message.
 No such file found 'credentials.toml' on 'streamlit hello'
 Using environment variables to set settings ~(does not work properly)~ error in documentation.
 PyDeck warning Mapbox API key not set.
@@ -882,7 +882,7 @@ NotImplementedError: Dtype category not understood.
 st.dataframe does not support multiindex dataframe styler formatting.
 Add ability to set document title shown in browser tab.
 Enable datetime formatting in st.slider.
-st.selectbox - No selection per default .
+st.selectbox - No selection per default.
 st.audio should build audio headers for raw data.
 st.image and st.video should build image and video headers for raw numpy array data.
 Add support for Vega (not just Vega Lite)
@@ -892,8 +892,8 @@ Page Not Found For Streamlit For Teams.
 selecting item from selectbox refreshes the page.
 Caching loading of Keras model generates errors on prediction.
 docs.streamlit.io doesn't have a favicon.
-Streamlit apps should use the Streamlit favicon! .
-Button inside button is resetting the page .
+Streamlit apps should use the Streamlit favicon!
+Button inside button is resetting the page.
 st.number_input silently fails to allow de/increment of integer when initial value was float.
 Failed hash warning needs line number reference.
 Enable Streamlit to run multiple applications on Django via Django Channels instead of Tornado.
@@ -978,7 +978,7 @@ Example code in "Add widgets to sidebar" is wrong.
 Echo doesn't echo all methods of class.
 Hot-reloading not working.
 Don't ship mapbox token in the code.
-deck_gl_chart does not react to viewport state change. .
+deck_gl_chart does not react to viewport state change.
 Incorrect `ahref` value in "Snapshot uploaded" dialog.
 Detect common network setup errors in the frontend, and offer advice.
 Warn user about bad number_input format string.
@@ -994,7 +994,7 @@ Create config option to set Mapbox API token.
 Image Carousel for lists of images, images have addressable indices.
 Display LIME TextExplainer with Streamlit.
 Using Poetry for Package management.
-Update caching docs .
+Update caching docs.
 Update the Input Key Mutated warning.
 Update the Cached Object Mutated warning.
 Add a `copy_returned_value` keyword argument to `st.cache`
@@ -1016,7 +1016,7 @@ Can't use odd numbers within Slider Component.
 RuntimeError: There is no current event loop in thread error with Streamlit and Asyncio.
 Official Logo for Streamlit.
 Can not start streamlit within an internal networks.
-date_input cannot go before January, 2000 .
+date_input cannot go before January, 2000.
 Altair chart sizes not realized by `altair_chart`
 Serving doesn't work when routing under directory.
 Improve  line_chart/bar_chart/area_chart API doc (index as X axis)
@@ -1056,7 +1056,7 @@ Warn users when they try to run Streamlit on an `ipynb` file.
 Terminating Streamlit server from within the code.
 Errors in and updates to Contributing file.
 Support for styled text.
-quotes and space in the  DATA_URL stops it from working .
+quotes and space in the  DATA_URL stops it from working.
 Add option to run modules.
 Ordinary python objects should be hashed properly (using __reduce__)
 Objects we know about should be hashed properly.
@@ -1090,7 +1090,7 @@ Streamlit app remains running even after terminating from the terminal.
 how  to upload？.
 Documentation needed around manipulating st.text_input elements.
 Server-side state.
-Ticker Saturation on st.line_chart  .
+Ticker Saturation on st.line_chart.
 installTracer option is not working.
 Inconsistent naming and language features in tutorials.
 number_input widget renders extra spinner next to the text field in Firefox.
@@ -1099,7 +1099,7 @@ Specify max number of characters in text area.
 Enable Google Analytic or any kind of traffic tracking tools requires some Javscript.
 Export to stand alone HTML file.
 >2k requests being blocked by uBlock Origin.
-Certificate issue on all demos .
+Certificate issue on all demos.
 Undefined name `github_doc_root` in docs/conf.py.
 Implement st.jupyter_widget()
 Log connected IPs and client information to console and/or file.
@@ -1108,9 +1108,9 @@ Native charts should accept index as x-axis regardless of index name.
 AttributeError: module 'streamlit' has no attribute 'grid'
 pandas.NaT shows as Sep 21, 1677 2:12 AM for dataframe and table call.
 `make build-circleci` fails: e2e/Dockerfile is broken.
-streamlit hello freeze when I connect it through web page .
+streamlit hello freeze when I connect it through web page.
 multiselect box makes the page walk after updating the value.
-Additional data mutation methods .
+Additional data mutation methods.
 exception on backend while running success.spec.ts.
 st.markdown + HTML: some styling only applies to first block prior to 2+ breaklines.
 Change background and text color.
@@ -1122,7 +1122,7 @@ Plotly treemaps not rendering.
 Default radius for st.map should scale to fit its lan/lon parameters.
 Redrawable types should be documented.
 More documentation on deck.gl.
-Caching fails with Pytorch Tensor as input .
+Caching fails with Pytorch Tensor as input.
 Detect when orphaned thread is left running.
 Incorrect map for second deck.gl example.
 Allow scrolling in st.selectbox for better layout.
@@ -1206,7 +1206,7 @@ Show in-place progress bar when sending large deltas (and provide a "skip" butto
 "Black" formatter does not always run on presubmit.
 vegalite chart height ignored in 0.48.1.
 Add server.watchFilesystem config option.
-Open in wide mode .
+Open in wide mode.
 Map views don't change when changing latlongs with selectbox.
 Ability to accept input from Charts, Tables, etc.
 Pandas categories support not implemented.
@@ -1217,7 +1217,7 @@ Hashing connections to DB failed.
 Please improve logging formatter with time.
 Display images horizhontally.
 Seaborn integration with streamlit.
-error: TypeError: init() got an unexpected keyword argument ‘serialized_options’ .
+error: TypeError: init() got an unexpected keyword argument ‘serialized_options’.
 Can`t connect to streamlit server over network.
 streamlit never connects over network.
 Support custom HTTP requests.
@@ -1230,7 +1230,7 @@ Allow filling widget values with parameters passed by the URL.
 Change base url of the websocket.
 Customize widgets.
 Allow to style/format the widgets.
-Deck.gl tooltip on hover .
+Deck.gl tooltip on hover.
 step counting for slider not starting at min_value.
 A user should have permission to the temporary file we create when we exe.
 st.text_input: support password input.
@@ -1258,11 +1258,11 @@ Some example apps in this repo cannot be run as single file apps.
 while deploying streamlit app on heroku "Streamlit failed to hash an object of type <class 'code'>.,"
 selectbox not working as expected when "navigating between pages"
 Cypress: Sidebar snapshots.
-st.checkbox(message) same object for same message. .
+st.checkbox(message) same object for same message.
 streamlit.bar_chart should not sort columns.
 Can't install in OS X Mojave.
 Streamlit's fonts don't display properly on Microsoft Edge.
-Reqest st.serve to serve some data at a .
+Reqest st.serve to serve some data at a.
 Header overlaps with Plotly chart.
 add cli config flags to `streamlit hello`
 Request: Streamlit versions of pd.read_json and pd.read_csv.
@@ -1299,7 +1299,7 @@ Handling External Command Line Arguments.
 Top Half of Seaborn Chart Title Gets Cut Off.
 Improve streamlit.linechart to have functionalities similar to Tensorboard's "AddScalar" plots.
 Docs mention inexistent "Share app" menu item.
-map ScatterplotLayer getRadius unpredictable .
+map ScatterplotLayer getRadius unpredictable.
 @st.cache does not work properly on conda.
 Plug-in architecture for Streamlit.
 DataFrame demo fails.
@@ -1308,7 +1308,7 @@ Documentation: Potential Bad Backtick.
 Does not do anything.
 Last two demos in dropdown are throwing errors.
 Passing hrefs to st.image()
-Raw markdown in the docs – "Get Started" .
+Raw markdown in the docs – "Get Started"
 benchmark with large dataset.
 ImportError: cannot import name 'Balloons_pb2' from 'streamlit.proto'
 Allow writing to Streamlit from multiple threads.
@@ -1321,7 +1321,7 @@ Grid layout.
 Numeric input widgets.
 Fix CircleCI/Cypress flakiness.
 Can't cache functions using DEAP.
-add a File Prompt feature to allow to load files to be processed, without having to know where to place it. .
+add a File Prompt feature to allow to load files to be processed, without having to know where to place it.
 Unable to fully disable metrics collection.
 Cache reference lost after an error.
 Make apps bookmarkable: set query params based on widget values.
@@ -1342,7 +1342,7 @@ Support magic in imported modules.
 Mapping and DataFrame demo apps through errors.
 Documentation: Broken URL Homepage.
 Watchdog error on install (Mac)
-gbk python readwrite  .
+gbk python readwrite.
 wanted to contribute to the project.
 Split st.text/markdown/json/alert protos and JS elements.
 Change the height of a text_area.
@@ -1405,7 +1405,7 @@ Error when running examples/mnist-cnn.py in two tabs.
 Request: st.stop()
 Implicit cache imports aren't handled properly during `streamlit run URL`
 Feature request: confirm_button.
-Client-side state should be directly accessible .
+Client-side state should be directly accessible.
 Feature Request: Ability to highlight and select text in a DataFrame index.
 Turning on `server.enableCORS` via `set_option()` can crash chrome.
 Add support for private sharing of static apps via S3.
