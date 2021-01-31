@@ -3,39 +3,13 @@ import os
 import string
 from functools import partial
 
-
-import firebase_admin
 import markovify
 import streamlit as st
-from firebase_admin import credentials, firestore
 
 import secrets_beta
 from text_model import TextModel
 
 st.set_page_config(layout="wide")
-
-TMP_CREDS_PATH = "/tmp/todo_creds.json"
-
-
-@st.cache
-def firestore_setup():
-    creds_dict = json.loads(st.secrets["firestore_key"])
-    try:
-        with open(TMP_CREDS_PATH, "w") as f:
-            json.dump(creds_dict, f)
-            f.write("\n")
-
-        creds = credentials.Certificate(TMP_CREDS_PATH)
-        firebase_admin.initialize_app(creds)
-    finally:
-        os.remove(TMP_CREDS_PATH)
-
-    return st.secrets["firestore_key"]
-
-
-firestore_setup()
-db = firestore.client()
-todos_collection = db.collection("todos")
 
 session_state = st.beta_session_state(
     default_key="some_key",
@@ -47,14 +21,8 @@ session_state = st.beta_session_state(
 
 
 def update_model(todo_text=None):
-    if not session_state.model:
-        serialized_model = (
-            db.collection("models").document("model").get().to_dict()["json_string"]
-        )
-        session_state.model = TextModel.from_json(serialized_model)
-    if todo_text:
-        to_combine = TextModel(todo_text)
-        session_state.model = markovify.combine([session_state.model, to_combine])
+    to_combine = TextModel(todo_text)
+    session_state.model = markovify.combine([session_state.model, to_combine])
 
 
 def render_tasks_and_buttons(column, tasks, button_label, button_action):
@@ -99,7 +67,16 @@ def finished_tasks(col):
     )
 
 
-update_model()
+placeholder = st.empty()
+if not session_state.model:
+    placeholder.warning("Initializing. Please wait...")
+    with open("./issue_titles.txt") as f:
+        text = f.read()
+    session_state.model = TextModel(text)
+
+placeholder.empty()
+
+
 st.write("# TODOs and Stuff")
 
 with st.beta_form(submit_label="Submit", key="submit_form"):
@@ -112,12 +89,10 @@ with st.beta_form(submit_label="Submit", key="submit_form"):
     if todo_text:
         session_state.input_key += 1
         session_state.my_todos.append(todo_text)
-        update_model(todo_text)
         input_placeholder.text_input("Add a TODO!", key=session_state.input_key)
 
         if share_me:
-            doc_ref = todos_collection.document()
-            doc_ref.set({"text": todo_text})
+            update_model(todo_text)
 
 st.text("")
 st.button("Help! I don't know what to do! :(", on_click=make_suggestion)
